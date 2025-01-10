@@ -21,8 +21,8 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Routes
-// const submitRoute = require("./routes/submit");
-// app.use("/api/submit", submitRoute);
+const submitRoute = require("./routes/submit");
+app.use("/api/submit", submitRoute);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
