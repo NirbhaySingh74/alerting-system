@@ -31,8 +31,8 @@ This project implements a backend alerting system that monitors a specific POST 
 ### 1. Clone the Repository
 
 ```bash
-git clone <https://github.com/NirbhaySingh74/alerting-system.git>
-cd <alerting-system>
+git clone https://github.com/NirbhaySingh74/alerting-system.git
+cd alerting-system
 ```
 
 ### 2. Install Dependencies
@@ -119,14 +119,15 @@ The server will run on `http://localhost:5000` by default.
 
 ```
 .
-├── controllers
-│   └── submitController.js  # Handles request validation and alerts
-├── models
-│   └── failedRequest.js     # MongoDB schema for failed requests
-├── routes
-│   └── submit.js            # API routes
-├── .env                     # Environment variables
-├── index.js                 # Main application entry point
-├── package.json             # Project metadata and dependencies
-└── README.md                # Project documentation
+├── src
+│   ├── controllers
+│   │   └── submitController.js  # Handles request validation and alerts
+│   ├── models
+│   │   └── failedRequest.js     # MongoDB schema for failed requests
+│   ├── routes
+│   │   └── submit.js            # API routes
+│   └── index.js                 # Main application entry point
+├── .env                         # Environment variables
+├── package.json                 # Project metadata and dependencies
+└── README.md                    # Project documentation
 ```
