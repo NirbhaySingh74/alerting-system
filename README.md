@@ -131,3 +131,9 @@ The server will run on `http://localhost:5000` by default.
 ├── package.json                 # Project metadata and dependencies
 └── README.md                    # Project documentation
 ```
+
+## Email Alert Example
+
+Below is an example of the email alert you will receive when the failure threshold is exceeded:
+
+![Email Alert](./assets/email-alert-example.png)
