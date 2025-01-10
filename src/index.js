@@ -1,16 +1,31 @@
-import express from "express";
-import dotenv from "dotenv";
-import mongoose from "mongoose";
-import bodyParser from "body-parser";
-dotenv.config();
-const port = process.env.PORT;
-const app = express();
-app.use(bodyParser.json());
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDb Connected"))
-  .catch((err) => console.log("MongoDb Connection Error", err));
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
-app.listen(port, () => {
-  console.log(`server is running on port ${port}`);
+// Load environment variables
+dotenv.config();
+
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.json());
+
+// Database Connection
+mongoose
+  .connect(process.env.DB_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
+
+// Routes
+// const submitRoute = require("./routes/submit");
+// app.use("/api/submit", submitRoute);
+
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
